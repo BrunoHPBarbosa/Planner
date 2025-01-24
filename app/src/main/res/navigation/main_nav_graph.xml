@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/initialLoadingFragment">
+
+    <fragment
+        android:id="@+id/initialLoadingFragment"
+        android:name="com.app.planner.ui.InitialLoadingFragment"
+        android:label="InitialLoadingFragment" >
+        <action
+            android:id="@+id/action_initialLoadingFragment_to_userRegistrationFragment"
+            app:destination="@id/userRegistrationFragment" />
+        <action
+            android:id="@+id/action_initialLoadingFragment_to_userRegistrationFragment2"
+            app:destination="@id/userRegistrationFragment" />
+        <action
+            android:id="@+id/action_initialLoadingFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.planner.ui.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/userRegistrationFragment"
+        android:name="com.app.planner.ui.UserRegistrationFragment"
+        android:label="UserRegistrationFragment" >
+        <action
+            android:id="@+id/action_userRegistrationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
