@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/md_16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.UserRegistrationFragment">
+    tools:context=".ui.UserRegistrationFragment">
 
     <TextView
         android:id="@+id/tvUserRegistrationTitle"
@@ -91,6 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/salvar_usuario"
+        android:enabled="false"
         android:textColor="@color/lime_950"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
