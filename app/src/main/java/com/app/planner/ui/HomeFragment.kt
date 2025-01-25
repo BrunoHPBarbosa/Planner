@@ -5,14 +5,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.app.planner.R
-import com.app.planner.data.utils.imageBase64ToBitmap
+import com.app.planner.domain.utils.imageBase64ToBitmap
 import com.app.planner.databinding.FragmentHomeBinding
+import com.app.planner.ui.component.PlannerActivityDatePickerDialogFragment
 import com.app.planner.ui.viewmodel.UserRegistrationViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -39,6 +40,18 @@ class HomeFragment: Fragment() {
 
         setupObservers()
         with(binding){
+            tietNewPlannerActivityDate.setOnClickListener {
+                PlannerActivityDatePickerDialogFragment(
+                    onConfirm = { year, month, day ->
+                        Toast.makeText(requireContext(), "$year $month $day", Toast.LENGTH_SHORT)
+                            .show()
+                    },
+                    onCancel = {}
+                ).show(
+                    childFragmentManager,
+                    PlannerActivityDatePickerDialogFragment.TAG
+                )
+            }
             btnSaveNewPlannerActivity.setOnClickListener {
                 UpdatePlannerActivityDialogFragment().show(
                     childFragmentManager,

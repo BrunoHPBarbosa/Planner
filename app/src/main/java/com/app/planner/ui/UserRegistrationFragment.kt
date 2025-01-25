@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.app.planner.data.utils.imageBitMapToBase64
-import com.app.planner.data.utils.imageUriBitmap
+import com.app.planner.domain.utils.imageBitMapToBase64
+import com.app.planner.domain.utils.imageUriBitmap
 import com.app.planner.databinding.FragmentUserRegistrationBinding
 import com.app.planner.ui.viewmodel.UserRegistrationViewModel
 import kotlinx.coroutines.launch

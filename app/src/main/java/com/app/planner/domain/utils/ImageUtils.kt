@@ -1,4 +1,4 @@
-package com.app.planner.data.utils
+package com.app.planner.domain.utils
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -7,6 +7,7 @@ import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
+import android.util.Base64
 import java.io.ByteArrayOutputStream
 
 fun Context.imageUriBitmap(uri: Uri): Bitmap? =
@@ -26,12 +27,12 @@ fun imageBitMapToBase64(bitmap: Bitmap): String {
     val biteArrayOutPutString = ByteArrayOutputStream()
     bitmap.compress(Bitmap.CompressFormat.WEBP, 50, biteArrayOutPutString)
     val byteArray = biteArrayOutPutString.toByteArray()
-    return android.util.Base64.encodeToString(byteArray, android.util.Base64.DEFAULT)
+    return Base64.encodeToString(byteArray, Base64.DEFAULT)
 }
 
 fun imageBase64ToBitmap(base64String: String): Bitmap? =
     try {
-        val decodeBytes = android.util.Base64.decode(base64String,android.util.Base64.DEFAULT)
+        val decodeBytes = Base64.decode(base64String, Base64.DEFAULT)
         BitmapFactory.decodeByteArray(decodeBytes,0,decodeBytes.size)
     }catch (_: Exception) {
         null
