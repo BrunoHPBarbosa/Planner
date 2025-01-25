@@ -14,6 +14,7 @@ import com.app.planner.R
 import com.app.planner.domain.utils.imageBase64ToBitmap
 import com.app.planner.databinding.FragmentHomeBinding
 import com.app.planner.ui.component.PlannerActivityDatePickerDialogFragment
+import com.app.planner.ui.component.PlannerActivityTimePickerDialogFragment
 import com.app.planner.ui.viewmodel.UserRegistrationViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -50,6 +51,18 @@ class HomeFragment: Fragment() {
                 ).show(
                     childFragmentManager,
                     PlannerActivityDatePickerDialogFragment.TAG
+                )
+            }
+            tietNewPlannerActivityDate.setOnClickListener {
+                PlannerActivityTimePickerDialogFragment(
+                    onConfirm = { hourOfDay,minute ->
+                        Toast.makeText(requireContext(), "$hourOfDay $minute", Toast.LENGTH_SHORT)
+                            .show()
+                    },
+                    onCancel = {}
+                ).show(
+                    childFragmentManager,
+                    PlannerActivityTimePickerDialogFragment.TAG
                 )
             }
             btnSaveNewPlannerActivity.setOnClickListener {
