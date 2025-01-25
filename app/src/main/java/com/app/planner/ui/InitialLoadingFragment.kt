@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.app.planner.databinding.FragmentInitialLoadingBinding
@@ -20,7 +20,7 @@ class InitialLoadingFragment:Fragment() {
 
     private val naController by lazy{ findNavController() }
 
-    private val userRegistrationViewModel: UserRegistrationViewModel by viewModels<UserRegistrationViewModel>()
+    private val userRegistrationViewModel: UserRegistrationViewModel by activityViewModels<UserRegistrationViewModel>()
 
 
     override fun onCreateView(
