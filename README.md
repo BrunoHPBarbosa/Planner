@@ -1,6 +1,6 @@
 # Planner
 
-Create a native android app, using Shared Preferences, Preferences, DataStore Proto DataStore and ROOM.
+Bem-vindo ao Planner de Tarefas! Este aplicativo foi desenvolvido para ajudar os usuários a organizar e gerenciar suas tarefas de forma eficiente e intuitiva. Abaixo, você encontrará uma visão geral dos conceitos e tecnologias implementados no projeto.
 
 
 ## :movie_camera: Video
@@ -17,19 +17,54 @@ Create a native android app, using Shared Preferences, Preferences, DataStore Pr
 
 🛠️ Technologies used
 
-- Kotlin
-- Clean Architecture
-- MVVM
-- Jetpack Components
+Funcionalidades Principais
 
-  * Clean Architecture:
-    - Separação de conceitos;
-    - Interface com base em modelos de dados;
-    - Única fonte de informações;
-    - Fonte: https://developer.android.com/topic/architecture?hl=pt-br
-   
-      * MVVM:
-    - Separação de responsabilidades;
-    - Facilidade de manutenção;
-    - Testabilidade.
-     
+Criação de Tarefas: Permite adicionar, editar e excluir tarefas.
+
+Persistência de Dados: As informações do usuário são salvas para que sejam mantidas mesmo após fechar o app.
+
+Configurações do Usuário: Personalização de preferências através de opções salvas localmente.
+
+Tecnologias e Conceitos Implementados
+
+1. SharedPreferences
+
+Utilizado para armazenar informações simples e chave-valor, como preferências do usuário (tema, notificações, etc.). É ideal para configurações rápidas que não precisam de estrutura complexa.
+
+2. Preference Screen
+
+Implementado para fornecer uma interface amigável onde o usuário pode configurar suas preferências diretamente no app. Essas configurações são gerenciadas com SharedPreferences.
+
+3. Room
+
+Usado para gerenciar a persistência de dados relacionais. Ele substitui o uso direto de SQLite e oferece uma API mais simples e robusta. No app, o Room é utilizado para:
+
+Salvar, atualizar e excluir tarefas do banco de dados local.
+
+Garantir a consistência dos dados mesmo quando o app é fechado.
+
+4. DataStore
+
+Adotado como uma alternativa mais moderna ao SharedPreferences para armazenar preferências de forma segura e eficiente. O DataStore é baseado em Kotlin Coroutines e Flow, oferecendo:
+
+Leitura e escrita de dados de forma assíncrona.
+
+Melhor desempenho e suporte para manipulação de dados mais complexos.
+
+5. MVVM (Model-View-ViewModel)
+
+Padrão arquitetural implementado para garantir uma separação clara entre lógica de negócio, interface de usuário e gerenciamento de dados. Suas vantagens incluem:
+
+Manutenção mais fácil do código.
+
+Melhora na testabilidade do app.
+
+Uso do ViewModel para lidar com o ciclo de vida das atividades e fragmentos.
+
+6. Injeção de Dependências Pura
+
+Optamos por usar injeção de dependências manual, sem bibliotecas externas como Dagger ou Hilt, para demonstrar controle completo e aprendizado do conceito. Isso inclui:
+
+Fornecimento de dependências através de construtores.
+
+Redução de acoplamento entre componentes.
