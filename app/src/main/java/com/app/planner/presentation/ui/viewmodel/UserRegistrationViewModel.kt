@@ -1,12 +1,12 @@
-package com.app.planner.ui.viewmodel
+package com.app.planner.presentation.ui.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.planner.data.AuthenticationLocalDataSource
+import com.app.planner.data.datasource.AuthenticationLocalDataSource
 import com.app.planner.data.datasource.UserRegistrationLocalDataSource
 import com.app.planner.core.di.MainServiceLocator
-import com.app.planner.data.model.Profile
+import com.app.planner.domain.model.Profile
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -102,7 +102,7 @@ class UserRegistrationViewModel : ViewModel() {
             onCompleted()
         }
     }
-    fun obtainsNewToken(){
+    fun obtainNewToken(){
         viewModelScope.launch {
             authenticationLocalDataSource.insertToken(token = mockToken)
             _isTokenValid.value = true

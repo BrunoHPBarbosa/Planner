@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/initialLoadingFragment"
-        android:name="com.app.planner.ui.InitialLoadingFragment"
+        android:name="com.app.planner.presentation.ui.InitialLoadingFragment"
         android:label="InitialLoadingFragment" >
         <action
             android:id="@+id/action_initialLoadingFragment_to_userRegistrationFragment"
@@ -20,11 +20,11 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.app.planner.ui.HomeFragment"
+        android:name="com.app.planner.presentation.ui.HomeFragment"
         android:label="HomeFragment" />
     <fragment
         android:id="@+id/userRegistrationFragment"
-        android:name="com.app.planner.ui.UserRegistrationFragment"
+        android:name="com.app.planner.presentation.ui.UserRegistrationFragment"
         android:label="UserRegistrationFragment" >
         <action
             android:id="@+id/action_userRegistrationFragment_to_homeFragment"

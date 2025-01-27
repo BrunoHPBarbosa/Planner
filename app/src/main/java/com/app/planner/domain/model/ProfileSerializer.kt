@@ -1,4 +1,4 @@
-package com.app.planner.data.model
+package com.app.planner.domain.model
 
 import androidx.datastore.core.Serializer
 import kotlinx.serialization.SerializationException

@@ -1,4 +1,4 @@
-package com.app.planner.data
+package com.app.planner.data.datasource
 
 import kotlinx.coroutines.flow.Flow
 

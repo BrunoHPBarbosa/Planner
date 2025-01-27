@@ -1,4 +1,4 @@
-package com.app.planner.ui
+package com.app.planner.presentation.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.app.planner.R
 import com.app.planner.databinding.FragmentInitialLoadingBinding
-import com.app.planner.ui.viewmodel.UserRegistrationViewModel
+import com.app.planner.presentation.ui.viewmodel.UserRegistrationViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class InitialLoadingFragment:Fragment() {
+class InitialLoadingFragment: Fragment() {
 
     private var _binding: FragmentInitialLoadingBinding? = null
     private val binding get() = _binding!!
@@ -40,9 +41,9 @@ class InitialLoadingFragment:Fragment() {
 
                 naController.navigate(
                     if (userRegistrationViewModel.getIsUserRegistered())
-                        com.app.planner.R.id.action_initialLoadingFragment_to_homeFragment2
+                        R.id.action_initialLoadingFragment_to_homeFragment2
                     else
-                        com.app.planner.R.id.action_initialLoadingFragment_to_userRegistrationFragment
+                        R.id.action_initialLoadingFragment_to_userRegistrationFragment
                 )
 
         }

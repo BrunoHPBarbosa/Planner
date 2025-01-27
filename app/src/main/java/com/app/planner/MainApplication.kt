@@ -7,6 +7,6 @@ class MainApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        MainServiceLocator.initialize(application = this)
+        MainServiceLocator.initializer(application = this)
     }
 }

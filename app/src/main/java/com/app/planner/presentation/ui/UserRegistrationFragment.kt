@@ -1,4 +1,4 @@
-package com.app.planner.ui
+package com.app.planner.presentation.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,10 +12,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.app.planner.R
 import com.app.planner.domain.utils.imageBitMapToBase64
 import com.app.planner.domain.utils.imageUriBitmap
 import com.app.planner.databinding.FragmentUserRegistrationBinding
-import com.app.planner.ui.viewmodel.UserRegistrationViewModel
+import com.app.planner.presentation.ui.viewmodel.UserRegistrationViewModel
 import kotlinx.coroutines.launch
 
 class UserRegistrationFragment : Fragment() {
@@ -83,7 +84,7 @@ class UserRegistrationFragment : Fragment() {
             btnSaveUser.setOnClickListener {
                 userRegistrationViewModel.saveProfile(
                     onCompleted = {
-                        navController.navigate(com.app.planner.R.id.action_userRegistrationFragment_to_homeFragment)
+                        navController.navigate(R.id.action_userRegistrationFragment_to_homeFragment)
                     })
 
             }
